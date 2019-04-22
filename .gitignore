@@ -85,3 +85,14 @@ typings/
 
 # Macintosh
 .DS_Store
+
+
+Thumbs.db
+db.json
+*.log
+node_modules/
+/node_modules/
+public/
+.deploy*/
+src/_drafts
+package-lock.json
