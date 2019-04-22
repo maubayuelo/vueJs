@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>VUE Workshop 01</title>
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="https://davidtkatz.com/public_css/vue.css"/>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+</head>
+
+<body>
+  <div id="app">
+    {{text}}
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data:{
+        text: 'Hello World'
+      }
+    })
+  </script>
+</body>
+</html>
