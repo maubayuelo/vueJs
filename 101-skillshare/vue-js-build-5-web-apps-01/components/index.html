@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue App</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+  <div id="app" >
+    <counter v-bind:add-num="5"></counter>
+    <imagen></imagen>
+  </div>
+  <script>
+
+    var counter = Vue.component('counter', {
+      template:`
+      <div>
+        <div>
+          Count: {{this.count}}
+        </div>
+        <button class="vue-btn" @click="increment">Increment by {{this.addNum}}</button>
+        </br></br></br></br></br></br>
+      </div>
+
+      `,
+      props:{
+        addNum:{
+          type: Number,
+          default: 1
+        }
+      },
+      data(){
+        return{
+          count: 0
+        }
+      },
+      methods:{
+        increment(){
+          this.count += this.addNum
+        }
+      }
+    }
+  );
+  var imagen = Vue.component('imagen',{
+    template:`
+      <div>
+        <img v-bind:src="img_url" />
+        </br></br>
+        {{this.img_url}}
+        </br></br>
+        <button class="vue-btn" @click="chg_img">Change Image</button>
+      </div>
+    `,
+    props:{
+      addId:{
+        type: Number,
+        default: (Math.floor(Math.random()*300)+200)
+      }
+    },
+    data(){
+      return{
+        img_url: 'https://picsum.photos/id/'+this.addId+'/300/300'
+      }
+    },
+    methods:{
+      chg_img(){
+        this.img_url = 'https://picsum.photos/id/'+(Math.floor(Math.random()*300)+200)+'/300/300'
+      }
+    }
+  });
+    var app = new Vue({
+      el: '#app',
+      components:{
+        counter
+      }
+
+    })
+  </script>
+</body>
+</html>
