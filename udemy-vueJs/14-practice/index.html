@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <!-- production version, optimized for size and speed -->
+  <script src="js/vue.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <div class="container margin_top">
+    <div id="app">
+      <h1 class="text-uppercase font-weight-bold">Conditionals</h1>
+      <img v-if="display" src="https://m.media-amazon.com/images/M/MV5BMTk2OTU3MDA3N15BMl5BanBnXkFtZTgwMTg5NjUyMjI@._V1_SX1777_CR0,0,1777,744_AL_.jpg" class="img-fluid rounded"/>
+      <img v-else src="https://m.media-amazon.com/images/M/MV5BMjM4MDc0MDI1OF5BMl5BanBnXkFtZTgwODM5MjY2MzI@._V1_SX888_CR0,0,888,371_AL_.jpg" class="img-fluid rounded"/>
+      <button @click="display = !display" type="button" class="btn btn-primary mt-3 mb-5">Toggle Image</button>
+      <hr />
+      <h1 class="text-uppercase mt-5 font-weight-bold">Best Movies</h1>
+      <template v-if="movies">
+        <template v-for="(movie, i) in movies" >
+          <h3 class="mt-3">{{i+1}}. {{movie.title}} ({{movie.year}})</h3>
+          <img :src="movie.img" class="img-fluid rounded"/>
+          <p class="mt-3">
+            {{movie.description}}
+          </p>
+        </template>
+      </template>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

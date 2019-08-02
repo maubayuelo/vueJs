@@ -18,15 +18,19 @@
 <body>
   <div class="container">
     <div id="app">
+      <div class="form-group">
+        <input type="text" v-model="name"  class="form-control form-control-lg" placeholder="Update Name">
+      </div>
+
       <h1>{{name}} ({{calculateAge()}})</h1>
-      <img v-bind:src="imgURL" v-once/>
-      <img v-bind:src="imgURL" v-on:click="changeImg" v-on:mousemove="updateCoords"/>
+      <img v-bind:src="imgURL" v-once v-on:mousemove="updateCoords"/>
+      <img v-bind:src="imgURL" v-on:click="changeImg"/>
       <p/>
       <p>
         X: {{x}} | Y: {{y}}
       </p>
       <p/>
-      <button v-on:click="increase(2, $event)">Increase</button>
+      <button v-on:click="increase(2, $event)" class="btn btn-primary">Increase</button>
       <p/>
       <h3>{{ val }}</h3>
     </div>

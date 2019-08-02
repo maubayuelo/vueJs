@@ -1,0 +1,19 @@
+.margin_top{
+  margin-top: 30px;
+}
+.square{
+  cursor: pointer;
+  width: 45%;
+  padding-bottom: 35%;
+  display: inline-block;
+  background-color: #ecf0f1;
+}
+.red{
+  background-color: #e74c3c;
+}
+.blue{
+  background-color: #3498db;
+}
+.violet{
+  background-color: #9b59b6;
+}

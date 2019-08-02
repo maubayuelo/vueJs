@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <!-- production version, optimized for size and speed -->
+  <script src="js/vue.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body >
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center my-3">
+          <h1 class="text-bold text-uppercase">Vue Instances</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div id="appReptil" class="col-sm-6 text-center">
+          <h2>{{ instanceTitle }}</h2>
+          <img :src="InstancePic" class="img-fluid"/>
+          <button @click="changeAnimal" id="start-game" type="button" class="btn btn-primary mt-1">Change Animal</button>
+        </div>
+        <div id="appBird" class="col-sm-6 text-center">
+          <h2>{{ instanceTitle }}</h2>
+          <img :src="InstancePic" class="img-fluid"/>
+          <button @click="changeAnimal" id="start-game" type="button" class="btn btn-primary mt-1">Change Animal</button>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div id="appAnimalsChange" class="col-sm-3 text-center mt-1">
+          <button ref="changeAnimalsBtn" @click="changeAnimals" id="start-game" type="button" class="btn btn-primary btn-block btn-lg mt-5">Change Animals</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

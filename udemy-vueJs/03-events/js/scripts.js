@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     el: '#app',
     data: {
       name: 'Mauricio',
-      imgURL: 'https://picsum.photos/300/300?image=1081',
+      imgURL: 'https://picsum.photos/150/150?image=1048',
       age:'',
       x:0,
       y:0,
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
         return this.age;
       },
       changeImg: function(){
-        this.imgURL = 'https://picsum.photos/300/300?image=' + Math.floor(Math.random() * (1084 - 1) + 0);
+        this.imgURL = 'https://picsum.photos/150/150?image=' + Math.floor(Math.random() * (1084 - 1) + 0);
         return this.imgURL;
 
       },

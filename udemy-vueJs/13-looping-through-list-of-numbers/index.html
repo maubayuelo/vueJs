@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <!-- production version, optimized for size and speed -->
+  <script src="js/vue.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <div class="container margin_top">
+    <div id="app">
+      <h1>Ingredients</h1>
+      <ul>
+        <li v-for="ingredient in ingredients" :key="ingredient">
+          {{ingredient}}
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li v-for="(ingredient, i) in ingredients" :key="ingredient">
+          {{ingredient}} ({{i+1}})
+        </li>
+      </ul>
+      <button @click="ingredients.push('spices')" class="btn btn-primary">Add New</button>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

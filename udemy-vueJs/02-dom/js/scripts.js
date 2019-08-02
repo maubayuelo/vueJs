@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", function(){
     data: {
       title: 'Hello World',
       url: 'https://google.com',
-      imgTag: '<img class="img-responsive" src ="https://picsum.photos/640/480?image=1040"/>',
-      imgURL: 'https://picsum.photos/640/480?image=1040'
+      imgTag: '<img class="img-responsive" src ="https://picsum.photos/640/480?image=1020"/>',
     },
     methods: {
       sayHello: function(){
-        this.title = 'URL';
+        this.title = this.url;
         return this.title;
       }
     }
