@@ -14,7 +14,6 @@
     import Content from './components/content.vue';
     import Side from './components/side.vue';
     import Footer from './components/footer.vue';
-
     export default{
       components:{
         // variations how you can call components
