@@ -47,12 +47,14 @@
             v-for="priority in priorities">{{priority}}</option>
         </select>
         <app-switch v-model="dataSwitch"></app-switch>
-        <button class="btn btn-primary mt-3">Submit!
+        <button
+          @click.prevent="submitted"
+          class="btn btn-primary mt-3">Submit!
         </button>
       </form>
 
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6">
+    <div class="col-xs-12 col-sm-12 col-md-6" v-if="isSubmitted">
       <div class="card">
         <div class="card-header">
           <h4>Your Data</h4>
@@ -91,7 +93,13 @@ export default {
       gender: 'Male',
       selectedPriority: 'Low',
       priorities: ['High', 'Medium', 'Low'],
-      dataSwitch: true
+      dataSwitch: true,
+      isSubmitted: false,
+    }
+  },
+  methods:{
+    submitted(){
+      this.isSubmitted = true;
     }
   },
   components:{
