@@ -17,6 +17,12 @@ export default {
   methods:{
     switched(){
       console.log(this.value);
+      //console.log(this.value);
+      if(this.value == true){
+        this.$emit('input', false);
+      }else{
+        this.$emit('input', true);
+      }
       //this.$emit('input', this.value)
     }
   }
