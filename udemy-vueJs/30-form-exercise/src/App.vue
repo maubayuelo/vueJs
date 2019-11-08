@@ -3,23 +3,9 @@
         <form>
             <div class="row">
                 <div class="col-xs-12 col-sm-6" v-if="!(isSubmitted)">
-                    <!-- Exercise 1 -->
-                    <!-- Create a Signup Form where you retrieve the following Information -->
-                    <!-- Full Name (First Name + Last Name) -->
-                    <!-- Mail -->
-                    <!-- Password -->
-                    <!-- Store Data? Yes/No -->
-
-                    <!-- Exercise 2 -->
-                    <!-- Only display the Form if it has NOT been submitted -->
-                    <!-- Display the Data Summary ONCE the Form HAS been submitted -->
-
-                    <!-- Exercise 3 -->
-                    <!-- Edit the Example from above and create a custom "Full Name" Control -->
-                    <!-- which still holds the First Name and Last Name Input Field -->
                     <form>
                     <div class="form-group">
-                        <app-user-name v-model="userName"></app-user-name>
+                        <app-full-name v-model="fullName"></app-full-name>
                         <label for="email">Mail</label>
                         <input
                             type="text"
@@ -48,14 +34,13 @@
                     </div>
                     </form>
                 </div>
-                <!-- v-if="isSubmitted" -->
-                <div class="col-xs-12 col-sm-6" >
+                <div class="col-xs-12 col-sm-6" v-if="isSubmitted">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4>Your Data</h4>
                         </div>
                         <div class="panel-body">
-                            <p>Full Name: <span class="text-primary">{{userName}}</span></p>
+                            <p>Full Name: <span class="text-primary">{{fullName}}</span></p>
                             <p>Mail: <span class="text-primary">{{userData.email}}</span></p>
                             <p>Password: <span class="text-primary">{{userData.password}}</span></p>
                             <p>Store in Database: <span class="text-primary">{{onDb}}</span></p>
@@ -68,7 +53,7 @@
 </template>
 
 <script>
-    import userName from './userName.vue';
+    import FullName from './fullName.vue';
     export default {
         data(){
             return{
@@ -76,7 +61,7 @@
                     email: '',
                     password:'',
                 },
-                userName: '',
+                fullName: 'Mauricio Bayuelo',
                 onDb: false,
                 isSubmitted: false,
             }
@@ -87,7 +72,7 @@
         }
       },
       components:{
-      appUserName : userName
+      appFullName : FullName
     }
     }
 </script>
